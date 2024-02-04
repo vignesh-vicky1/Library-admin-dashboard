@@ -1,121 +1,111 @@
-.h1{
+.h1 {
   text-align: center;
   background-color: red;
   height: 50px;
   border-radius: 50%;
 }
-.Subdiv1{
+.Subdiv1 {
   margin-left: 50px;
-
 
   height: 300px;
 }
 
-
-label{
+label {
   font-weight: 700;
-
 }
-input{
+input {
   margin-top: 4px;
   width: 300px;
   height: 30px;
   text-align: center;
 }
-button{
+button {
   border: 1px solid grey;
   border-radius: 3px;
   margin-top: 20px;
   padding: 10px;
   margin-left: 100px;
 }
-button:hover{
+button:hover {
   background-color: #6060da;
   color: white;
   cursor: pointer;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-.Maindiv{
+.Maindiv {
   display: flex;
   gap: 3rem;
   flex-wrap: wrap-reverse;
 }
-.Subdiv2{
+.Subdiv2 {
   flex-grow: 1;
 
   width: min-content;
   justify-content: center;
   text-align: center;
-
 }
-.tablediv{
-
+.tablediv {
   border: 0.5px solid grey;
-  width:100%;
+  width: 100%;
   justify-content: center;
   text-align: center;
 }
-.table{
+.table {
   table-layout: auto;
   width: 100%;
   border: 0.5px solid grey;
   text-align: center;
   justify-content: center;
   border-collapse: collapse;
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 }
-tr{
+tr {
   width: max-content;
 
   border: 0.5px solid grey;
   justify-content: center;
   text-align: center;
-
 }
-td{
+td {
   border: 0.5px solid grey;
   justify-content: center;
   text-align: center;
 }
-th{
+th {
   border: 0.5px solid black;
   height: 50px;
   background-color: grey;
 }
 
-.btn{
+.btn {
   width: 60px;
   height: 30px;
   margin-left: -10px;
   text-align: center;
   margin-bottom: 20px;
-
 }
-.td2{
+.td2 {
   background-color: #bb2a2a;
-
 }
 
-.bi-pencil-square{
+.bi-pencil-square {
   color: rgb(6 182 212);
 }
-<!-----LOADER STYLE-----------------------------------------------------------------,>
-.load{
-
-justify-content: center;
+<!-----LOADER
+  STYLE-----------------------------------------------------------------
+  > .load {
+  justify-content: center;
   width: 100px;
   height: 100px;
-    }
+}
 .loader {
-
   margin-left: 13rem;
   border: 4px solid rgb(96, 96, 218);
 
-      border-radius: 50%;
-
-    }
+  border-radius: 50%;
+}
 
 .loader {
   border: 4px solid rgb(96, 96, 218);
@@ -141,7 +131,3 @@ justify-content: center;
     transform: rotate(360deg);
   }
 }
-
-
-
-
