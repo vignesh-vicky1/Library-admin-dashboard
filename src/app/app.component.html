@@ -1,0 +1,29 @@
+<div *ngIf="Log.Data" class="shapedividers_com-4612" id="Div"
+     [ngClass]="{DivAfter:Log.Data}" >
+<nav class="Nav">
+
+  <div class="childDiv">
+    <i class="bi bi-list" (click)="Work()"></i>
+    <h1 class="H1 h-100">Library Management</h1>
+ </div>
+  <div class="childDiv">
+
+    <i class="bi bi-person-circle"></i>
+   <h2 class="H2"><span>Welcome,{{Auth.AdminName|Pipe1}}</span></h2>
+</div>
+
+</nav>
+
+  <User-comp></User-comp>
+
+</div>
+<div *ngIf="!Log.Data" class="logdiv">
+<Login-app></Login-app>
+
+</div>
+
+
+
+
+
+

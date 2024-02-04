@@ -1,0 +1,57 @@
+<div>
+  <h1 class="h1">Student Details</h1>
+</div>
+<div class="Maindiv">
+  <div class="Subdiv1">
+    <h4  class="td1">Add Student</h4>
+    <ng-form [formGroup]="StudentDetailsForm">
+      <label for="StudentName">StudentName : </label>
+      <br>
+      <input type="text" id="StudentName" formControlName="Name">
+      <br>
+      <label for="Academic">Academic Year : </label>
+      <br>
+      <input type="number" id="Academic" formControlName="Year">
+      <br>
+      <label for="JoinDate">JoinDate: </label>
+      <br>
+      <input type="date" id="JoinDate" formControlName="JoinDate">
+      <br>
+      <button type="submit" (click)="AddStudent()" >{{UpdateStudent ? 'Update':'Add Student'}}</button>
+
+    </ng-form>
+  </div>
+
+
+
+  <div class="Subdiv2">
+    <h4  class="td1">StudentData</h4>
+    <div class="load" *ngIf="Loaderstatus">
+
+      <div class="loader"></div>
+
+    </div>
+    <div class="tablediv" *ngIf="!Loaderstatus">
+    <table class="table" >
+
+
+      <tr class="tr2">
+        <th>Id</th>
+        <th>StudentName</th>
+        <th>Academic Year</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </tr>
+      <tr class="tr3"  *ngFor="let a of studentData">
+        <td #Id> {{a.Id}}</td>
+        <td>{{a.Name}}</td>
+        <td>{{a.Year}}</td>
+        <td class="td2"><i class="bi bi-trash3-fill" (click)="Delete(a.Id)"></i></td>
+        <td class="td"><i class="bi bi-pencil-square" (click)="Edit(a.Id)"></i></td>
+      </tr>
+    </table>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,55 @@
+<div class="main">
+  <input type="checkbox" id="chk" aria-hidden="true">
+
+  <div class="login">
+    <ng-form class="form" [formGroup]="LogIN">
+      <label for="chk" aria-hidden="true" #log>Log in</label>
+      <span class="s1" *ngIf="error">UserName or Password Is not match</span>
+      <input class="input" type="email" name="Email"
+             placeholder="Email"
+             required=""
+             formControlName="Email" [ngStyle]="{border:ErrorColor()}"  >
+      <span *ngIf="this.LogIN.touched && !this.LogIN.value.Email?.includes('@')">* Enter valid Email</span>
+      <input class="input"
+             type="password"
+             name="Password"
+             placeholder="Password"
+             required=""
+             formControlName="Password" [ngStyle]="{border:PassValid()}" >
+      <span *ngIf="this.LogIN.get('Password')?.invalid && this.LogIN.touched ">* Enter valid password</span>
+      <button (click)="Login()">
+        <span *ngIf="LoginSpinner">LogIn</span>
+        <span class="span" *ngIf="!LoginSpinner">
+        <div class="loader"></div>
+        </span>
+       </button>
+
+    </ng-form>
+  </div>
+
+  <div class="register">
+    <ng-form class="form" [formGroup]="Signin">
+      <label for="chk" aria-hidden="true">Register</label>
+      <span class="s1" *ngIf="SignupError">* Email Already Exist</span>
+      <input class="input"
+             type="text"
+             name="txt"
+             placeholder="Username"
+             required=""
+             formControlName="Username">
+      <input class="input"
+             type="email"
+             name="Email"
+             placeholder="Email"
+             required=""
+             formControlName="Email">
+      <input class="input"
+             type="password"
+             name="Password"
+             placeholder="Password"
+             required=""
+             formControlName="Password">
+      <button (click)="SignUp(log)">Register</button>
+    </ng-form>
+  </div>
+</div>

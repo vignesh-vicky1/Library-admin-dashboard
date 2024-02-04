@@ -1,0 +1,65 @@
+.maindiv{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+.h1{
+  text-align: center;
+  letter-spacing: 20px;
+  font-weight: 300;
+   text-shadow: 3px 3px 4px grey;
+  height: 50px;
+
+}
+.div1{
+  background-color: #6060da;
+  width: 100px;
+  text-align: center;
+  flex-wrap: nowrap;
+
+}
+.div2{
+  background-color: #6060da;
+  width: 100px;
+  text-align: center;
+  margin-left: 100px;
+  flex-wrap: nowrap;
+}
+.table{
+  width: 100px;
+  height: 100px;
+  color: white;
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+tr{
+  border: 1px solid black;
+
+}
+td{
+  border: 1px solid black;
+
+}
+i{
+  margin-right: 10px;
+  font-size: 30px;
+}
+.td1{
+  background-color: #bb2a2a;
+  font-size:30px ;
+}
+.chart{
+  position:relative;
+  top: 20px;
+  text-align: center;
+ left: 90px;
+
+  border-radius: 20px;
+ box-shadow: 2px 4px 5px 3px grey;
+  width:80%;
+  height: 330px;
+  justify-content: center;
+  align-items: center;
+}

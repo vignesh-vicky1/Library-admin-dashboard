@@ -1,0 +1,144 @@
+.h1{
+  text-align: center;
+  background-color: #f87171;
+  height: 50px;
+  border-radius: 50%;
+}
+.Subdiv1{
+  margin-left: 50px;
+
+
+  height: 300px;
+}
+
+
+label{
+  font-weight: 700;
+
+}
+input{
+margin-top: 4px;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+}
+button{
+  outline: none;
+  border: 1px solid grey;
+  margin-top: 20px;
+  padding: 10px;
+  margin-left: 100px;
+  transition: 0.5s ease-in-out;
+}
+button:hover{
+  background-color: #6060da;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.Maindiv{
+  display: flex;
+  gap: 3rem;
+  flex-wrap:wrap-reverse;
+  padding: 10px;
+}
+
+.Subdiv2{
+  width: fit-content;
+  flex-grow: 1;
+  justify-content: center;
+  text-align: center;
+}
+.tablediv{
+  border: 0.5px solid grey;
+  width:100%;
+  justify-content: center;
+  text-align: center;
+}
+.table{
+  table-layout: auto;
+  width: 100%;
+  border: 0.5px solid grey;
+  text-align: center;
+  justify-content: center;
+  border-collapse: collapse;
+  box-shadow: 0 25px 50px -12px rgb(61, 61, 63);
+
+}
+tr{
+  width: max-content;
+
+  border: 0.5px solid grey;
+  justify-content: center;
+  text-align: center;
+
+}
+td{
+  border: 0.5px solid grey;
+  justify-content: center;
+  text-align: center;
+}
+th{
+  border: 0.5px solid black;
+  height: 50px;
+  background-color: grey;
+}
+
+.btn{
+  width: 60px;
+  height: 30px;
+margin-left: -10px;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+.td2{
+  background-color: #bb2a2a;
+
+}
+
+
+.bi-pencil-square{
+  color: rgb(6 182 212);
+}
+<!-----LOADER STYLE-----------------------------------------------------------------,>
+.load{
+
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+    }
+.loader {
+
+  margin-left: 13rem;
+  border: 4px solid rgb(96, 96, 218);
+
+  border-radius: 50%;
+
+}
+
+.loader {
+  border: 4px solid rgb(96, 96, 218);
+  border-left-color: transparent;
+  width: 56px;
+  height: 56px;
+}
+
+.loader {
+  border: 4px solid rgb(96, 96, 218);
+  border-left-color: transparent;
+  width: 36px;
+  height: 36px;
+  animation: spin89345 1s linear infinite;
+}
+
+@keyframes spin89345 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
