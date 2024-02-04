@@ -1,0 +1,60 @@
+<div>
+  <h1 class="h1">Returned Book Details</h1>
+</div>
+<div class="Tdiv">
+
+  <div class="Div1">
+
+    <ng-form  [formGroup]="ReturnForm" class="form">
+      <div class="inputdiv">
+        <input type="Text" id="StudentName"  placeholder="StudentName" formControlName="StudentName">
+      </div>
+      <br>
+
+
+      <div class="inputdiv df">
+        <input type="text" id="BookName" placeholder="BookName" formControlName="BookName">
+      </div>
+      <br>
+      <input type="number" id="Quantity" placeholder="Quantity" formControlName="Quantity">
+      <br>
+      <span class="Errorspan" *ngIf="QuantityError">* Quantity is Not Match</span>
+      <input type="date" id="Date"  placeholder="Date" formControlName="Date">
+      <br>
+
+      <button class="btn-17"  (click)="AddEntry()">
+          Add Entry
+      </button>
+
+    </ng-form>
+  </div >
+  <div class="Subdiv2">
+    <h4  class="td1">BookData</h4>
+    <div class="load"*ngIf="Loaderstatus" >
+
+      <div class="loader"></div>
+
+    </div>
+
+    <div class="tablediv" *ngIf="!Loaderstatus">
+      <table class="table">
+
+
+        <tr class="tr2">
+          <th class="th">StudentName</th>
+          <th>BookName</th>
+          <th>Quantity</th>
+          <th>Date</th>
+        </tr>
+        <tr class="tr3"   *ngFor="let a of ReturnBookData">
+          <td >{{a.StudentName}}</td>
+          <td>{{a.BookName}}</td>
+          <td>{{a.Quantity}}</td>
+          <td >{{a.Date}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+

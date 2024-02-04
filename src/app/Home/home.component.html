@@ -1,0 +1,52 @@
+<div>
+  <h1 class="h1">Dash-board</h1>
+</div>
+<div class="maindiv">
+<div class="div1">
+  <table class="table">
+    <tr class="tr1">
+      <th class="th1">Books Categories</th>
+    </tr>
+    <tr class="tr2">
+      <td class="td1"><i class="bi bi-journal-bookmark-fill"></i>{{localStorage.getItem("Book")}}</td>
+    </tr>
+  </table>
+</div>
+<div class="div2">
+  <table class="table">
+    <tr class="tr1">
+      <th class="th1">Total no of Students</th>
+    </tr>
+    <tr class="tr2">
+      <td class="td1"><i class="bi bi-person-check-fill"></i>{{localStorage.getItem("Student")}}</td>
+    </tr>
+  </table>
+</div>
+  <div class="div2">
+    <table class="table">
+      <tr class="tr1">
+        <th class="th1">Total no of Issued Books</th>
+      </tr>
+      <tr class="tr2">
+        <td class="td1"><i class="bi bi-person-check-fill"></i>{{localStorage.getItem("IssueBooks")}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="div2">
+    <table class="table">
+      <tr class="tr1">
+        <th class="th1">Total Quantity of Issued Books</th>
+      </tr>
+      <tr class="tr2">
+        <td class="td1"><i class="bi bi-person-check-fill"></i>{{localStorage.getItem("IssueBooks")}}</td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>
+<div class="chart">
+
+  <canvas id="Chart"></canvas>
+
+</div>

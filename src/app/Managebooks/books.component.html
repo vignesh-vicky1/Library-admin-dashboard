@@ -1,0 +1,55 @@
+<div>
+  <h1 class="h1">Book Details</h1>
+</div>
+<div class="Maindiv">
+  <div class="Subdiv1">
+    <h4  class="td1">Add Book</h4>
+    <ng-form [formGroup]="AddBook"  class="form">
+      <label for="BookName">BookName : </label>
+      <br>
+      <input type="text" id="BookName" formControlName="BookName">
+      <br>
+      <label for="BookName">AuthorName : </label>
+      <br>
+      <input type="text" id="AuthorName" formControlName="AuthorName">
+      <br>
+      <label for="BookName">Quantity: </label>
+      <br>
+      <input type=number id="Quantity" formControlName="Quantity">
+      <br>
+      <button type="submit" (click)="Add()">{{updatebutton ? 'Update':'Add Book'}}</button>
+
+
+    </ng-form>
+  </div>
+
+  <div class="Subdiv2">
+    <h4  class="td1">BookData</h4>
+    <div class="load" *ngIf="Loaderstatus">
+
+      <div class="loader"></div>
+
+    </div>
+    <div class="tablediv" *ngIf="!Loaderstatus">
+    <table class="table">
+
+
+      <tr class="tr2">
+        <th>ID</th>
+        <th>BookName</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+        <th class="th1">Edit</th>
+      </tr>
+      <tr class="tr3" *ngFor="let a of BookDetails; index as i "  >
+        <td #id>{{a.Id}}</td>
+        <td>{{a.BookName}}</td>
+        <td>{{a.Quantity}}</td>
+        <td class="td2"><i class="bi bi-trash3-fill" (click)="Delete(id)"></i></td>
+        <td class="td"><i class="bi bi-pencil-square" (click)="Edit(a.Id)"></i></td>
+      </tr>
+    </table>
+  </div>
+  </div>
+
+</div>

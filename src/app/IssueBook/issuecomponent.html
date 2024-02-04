@@ -1,0 +1,79 @@
+<div>
+  <h1 class="h1">Issued Book Details</h1>
+</div>
+<div class="Maindiv">
+<div class="Div1">
+  <ng-form [formGroup]="IssueBook">
+    <div class="inputdiv">
+    <input type="Text" id="StudentName"  placeholder="StudentName" formControlName="StudentName"><i class="bi bi-check" *ngIf="IssueBook.get('StudentName').errors.value1"></i>
+</div>
+    <br>
+
+    <div class="inputdiv">
+    <input type="text" id="BookName" placeholder="BookName" formControlName="BookName"><i class="bi bi1 bi-check" *ngIf="IssueBook.get('BookName').errors.value2"></i>
+    </div>
+      <br>
+
+    <div class="inputdiv">
+    <input type="number" id="Quantity" placeholder="Quantity" formControlName="Quantity">
+    </div>
+      <br>
+    <div class="inputdiv">
+      <input type="date" id="Date"  placeholder="Date" formControlName="Date">
+    </div>
+      <br>
+
+    <button class="btn-17 " (click)="AddEntry()" >
+  <span class="text-container">
+    <span class="text">Add Entry</span>
+  </span>
+    </button>
+
+  </ng-form>
+</div>
+
+
+
+  <div class="Subdiv2">
+    <h4  class="td1">Issued Book Detail's</h4>
+    <div class="load" *ngIf="Loaderstatus">
+
+      <div class="loader"></div>
+
+    </div>
+    <div class="tablediv" *ngIf="!Loaderstatus">
+    <table class="table">
+
+
+      <tr class="tr2">
+        <th>Issued Date</th>
+        <th>StudentName</th>
+        <th>BookName</th>
+        <th>Quantity</th>
+      </tr>
+      <tr class="tr3" *ngFor="let a of IssueDetails" >
+        <td >{{a.Date}}</td>
+        <td>{{a.StudentName}}</td>
+        <td>{{a.BookName}}</td>
+        <td>{{a.Quantity}}</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
