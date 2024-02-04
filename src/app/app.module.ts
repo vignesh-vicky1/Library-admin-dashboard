@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {User} from "./User/user.component";
-import {Router, RouterModule} from "@angular/router";
+
 import {Books} from "./Managebooks/books.component";
 import {Home} from "./Home/home.component";
 import {BookData} from "./Services/Books.services";
@@ -15,23 +15,16 @@ import {IssuebookComponent} from "./IssueBook/issuebook.component";
 import {Loggin} from "./Logging/login.component";
 import {LoginData} from "./Services/Login.service";
 import {BookAndStudent} from "./Services/BookStudentData.serivice";
-import {Resolvers} from "./Services/resolver.service";
+
 import {Authentication} from "./Services/Auth.service";
-import {FirebaseApp} from "@angular/fire/app";
-import firebase from "firebase/compat";
+
 
 import {AngularFireModule} from "@angular/fire/compat";
 import {ReturnBook} from "./ReturnBook/returnbook.component";
 import {CentralRepo} from "./Services/MainRepo.service";
 import {Pipes} from "./Services/Custompipe.service";
 
-const routes=[
-  {path:"Books",component:Books},
-  {path:'Home', component: Home},
-  {path: 'Students',component: StudentComponent},
-  {path: "IssueBooks",component: IssuebookComponent},
-  {path: "ReturnBook",component: ReturnBook}
-]
+
 const Firebase={
   apiKey: "AIzaSyB0P6SIgR1EHhn5D1yZZHgzqqfPbF2WuyA",
   authDomain: "authentication-19a46.firebaseapp.com",
@@ -64,7 +57,7 @@ const Firebase={
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    AppRoutingModule,
    AngularFireModule.initializeApp({
      apiKey: "AIzaSyB0P6SIgR1EHhn5D1yZZHgzqqfPbF2WuyA",
      authDomain: "authentication-19a46.firebaseapp.com",
