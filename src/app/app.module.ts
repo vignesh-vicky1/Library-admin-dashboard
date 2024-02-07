@@ -23,6 +23,7 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {ReturnBook} from "./ReturnBook/returnbook.component";
 import {CentralRepo} from "./Services/MainRepo.service";
 import {Pipes} from "./Services/Custompipe.service";
+import {CanDeactivate} from "./Services/CanDeactivate.service";
 
 
 const Firebase={
@@ -46,7 +47,8 @@ const Firebase={
     IssuebookComponent,
     Loggin,
     ReturnBook,
-    Pipes
+    Pipes,
+
 
 
   ],
@@ -69,6 +71,7 @@ const Firebase={
      measurementId: "G-SQRCE059GP"
    }),
     AngularFireModule,
+
 
 
   ],

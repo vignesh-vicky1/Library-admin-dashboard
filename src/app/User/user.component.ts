@@ -25,6 +25,10 @@ ngAfterViewInit() {
 
 }
 
+Logout(){
+
+}
+
   ngOnInit() {
 
 }
