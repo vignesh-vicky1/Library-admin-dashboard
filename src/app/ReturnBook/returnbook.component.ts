@@ -93,6 +93,16 @@ export class ReturnBook implements OnInit{
 
   }
 
+  //DELETE DATA ------------------------------------------------------------------------------
+  DeleteData(){
+    this.Http.delete("https://personandb-default-rtdb.firebaseio.com/ReturnData.json")
+      .subscribe((res)=>{
+        console.log(res)
+      })
+    this.GetReturnData()
+  }
+
+
 
 ngOnInit() {
     this.GetReturnData()
