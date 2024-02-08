@@ -1,11 +1,22 @@
-import {ElementRef} from "@angular/core";
-
-export class LoginData{
+import {ElementRef, Injectable, OnInit} from "@angular/core";
+import { Authentication } from "./Auth.service";
+@Injectable({providedIn:'root'})
+export class LoginData implements OnInit{
   constructor() {
   }
 
-  Data:boolean=false;
+
+
+
+
+  Data:boolean=false
   Sidebar:any
 
+
+
+
+  ngOnInit(): void {
+
+  }
 
 }

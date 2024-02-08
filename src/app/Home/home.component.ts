@@ -5,6 +5,7 @@ import {ActivatedRoute, Route} from "@angular/router";
 
 import {HttpClient} from "@angular/common/http";
 import{ Chart,registerables} from "chart.js"
+import { Authentication } from "../Services/Auth.service";
 Chart.register(...registerables)
 
 @Component({
@@ -15,7 +16,7 @@ Chart.register(...registerables)
 })
 
  export  class Home implements OnInit{
-  constructor(private bookservice:BookData , private route:ActivatedRoute,private issuebook:BookData ,private Http:HttpClient) {
+  constructor(private bookservice:BookData ,private issuebook:BookData ,private auth:Authentication) {
   }
    Bookscount:number=0
   Studentcount:number=0
@@ -33,6 +34,7 @@ Chart.register(...registerables)
           let students =localStorage.getItem("Student")
           let issuedBooks=localStorage.getItem("IssueBooks")
           this.piechart( books,students,issuedBooks)
+
 
 
         }

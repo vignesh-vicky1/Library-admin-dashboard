@@ -10,7 +10,7 @@ import {Authentication} from "../Services/Auth.service";
 })
 export  class User implements AfterViewInit{
   @ViewChild('div') divelement!:ElementRef
-constructor(public Log:LoginData ,public Auth:Authentication,private render:Renderer2) {
+constructor(public Log:LoginData ,public Auth:Authentication,private render:Renderer2,) {
 }
 
 
@@ -23,9 +23,16 @@ ngAfterViewInit() {
   this.Log.Sidebar=this.divelement.nativeElement
   console.log(this.divelement.nativeElement)
 
+
+}
+Logout(event:Event){
+    this.Auth.Logout(event)
+
+  console.log('work')
 }
 
   ngOnInit() {
+
 
 }
 }
