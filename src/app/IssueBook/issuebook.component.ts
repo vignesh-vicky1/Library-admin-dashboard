@@ -160,7 +160,7 @@ export class IssuebookComponent implements OnInit{
 
 
 
-    } if(comparedData.length>=1) {
+    } if(comparedData.length>=0) {
         this.Http.put("https://personandb-default-rtdb.firebaseio.com/IssuedBooks.json", comparedData)
           .subscribe((value) => {
             console.log(value)
