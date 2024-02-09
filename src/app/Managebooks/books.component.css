@@ -10,7 +10,12 @@
 
   height: 300px;
 }
-
+tr2{
+  ba
+}
+tr:nth-child(even){
+  background-color: #949494;
+}
 
 label{
   font-weight: 700;
@@ -80,9 +85,10 @@ td{
   text-align: center;
 }
 th{
-  border: 0.5px solid black;
+  border: 0.5px solid #ffffff;
   height: 50px;
-  background-color: grey;
+  background-color: black;
+  color: white;
 }
 
 .btn{
@@ -100,7 +106,8 @@ margin-left: -10px;
 
 
 .bi-pencil-square{
-  color: rgb(6 182 212);
+  color: #266526;
+
 }
 <!-----LOADER STYLE-----------------------------------------------------------------,>
 .load{

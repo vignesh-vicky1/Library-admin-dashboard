@@ -225,6 +225,9 @@ td{
   justify-content: center;
   text-align: center;
 }
+tr:nth-child(even){
+  background-color: green;
+}
 th{
   border: 1px solid black;
   height: 50px;

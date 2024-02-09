@@ -95,13 +95,14 @@ margin-left: 10px;
 .h2{
   text-align: left;
   background-color: #6060da;
-
+ cursor: pointer;
   margin-top: 40px;
   color: #d9cfcf;
 }
 .h2 a{
   text-decoration: none;
   color: #d9cfcf;
+  cursor: pointer;
 }
 i{
   color: white;
