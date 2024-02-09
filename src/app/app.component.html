@@ -9,7 +9,7 @@
   <div class="childDiv">
 
     <i class="bi bi-person-circle"></i>
-   <h2 class="H2"><span>Welcome,{{Auth.AdminName|Pipe1}}</span></h2>
+   <h2 class="H2"><span>Welcome,{{localStorage.getItem('UserName')|Pipe1}}</span></h2>
 </div>
 
 </nav>

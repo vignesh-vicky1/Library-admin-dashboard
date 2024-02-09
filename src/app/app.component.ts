@@ -28,9 +28,11 @@ this.render.addClass(this.Log.Sidebar,'sidebar')
 ngOnInit() {
 
   this.Auth.AutoLog()
+
   console.log('appcomp')
 
 }
 
 
+  protected readonly localStorage = localStorage;
 }

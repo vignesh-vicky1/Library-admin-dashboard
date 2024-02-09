@@ -41,6 +41,7 @@ Signup(Email:string,Password:string){
    return from(  this.auth.signInWithEmailAndPassword(Email,Password)).pipe(tap(res=>{
       this.Tokencatcher(res)
      this.AdminName=res.user?.email
+     localStorage.setItem('UserName',this.AdminName)
     }))
 
 
@@ -76,6 +77,7 @@ Signup(Email:string,Password:string){
     if(obj.token){
       this.tokendatas.next(obj)
       this.Log.Data= obj ?true :false
+
     }
 
     console.log(obj)
@@ -84,8 +86,7 @@ Signup(Email:string,Password:string){
 
   Logout(event:Event){
      event.preventDefault()
-
-   localStorage.clear()
+    localStorage.removeItem('userTokken')
 
     this.Log.Data=false
     this.route.navigate(['#'])

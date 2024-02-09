@@ -31,7 +31,7 @@ const routes=[
   {path: 'Students',component: StudentComponent},
   {path: "IssueBooks",component: IssuebookComponent},
   {path: "ReturnBook",component: ReturnBook},
-  {path:'#',component: Loggin}
+  {path:'LogIn',component: AppComponent}
 ]
 const Firebase={
   apiKey: "AIzaSyB0P6SIgR1EHhn5D1yZZHgzqqfPbF2WuyA",

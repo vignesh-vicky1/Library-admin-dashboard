@@ -26,9 +26,14 @@ ngAfterViewInit() {
 
 }
 Logout(event:Event){
-    this.Auth.Logout(event)
+   if( confirm('Are you want to Logout')){
+     this.Auth.Logout(event)
+   }
+    else{
+     console.log('work')
+   }
 
-  console.log('work')
+
 }
 
   ngOnInit() {
