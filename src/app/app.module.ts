@@ -15,7 +15,7 @@ import {IssuebookComponent} from "./IssueBook/issuebook.component";
 import {Loggin} from "./Logging/login.component";
 import {LoginData} from "./Services/Login.service";
 import {BookAndStudent} from "./Services/BookStudentData.serivice";
-import {Resolvers} from "./Services/resolver.service";
+
 import {Authentication} from "./Services/Auth.service";
 import {FirebaseApp} from "@angular/fire/app";
 import firebase from "firebase/compat";
@@ -24,25 +24,10 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {ReturnBook} from "./ReturnBook/returnbook.component";
 import {CentralRepo} from "./Services/MainRepo.service";
 import {Pipes} from "./Services/Custompipe.service";
+import { Records } from './Records/records.component';
 
-const routes=[
-  {path:"Books",component:Books},
-  {path:'Home', component: Home},
-  {path: 'Students',component: StudentComponent},
-  {path: "IssueBooks",component: IssuebookComponent},
-  {path: "ReturnBook",component: ReturnBook},
-  {path:'LogIn',component: AppComponent}
-]
-const Firebase={
-  apiKey: "AIzaSyB0P6SIgR1EHhn5D1yZZHgzqqfPbF2WuyA",
-  authDomain: "authentication-19a46.firebaseapp.com",
-  databaseURL: "https://authentication-19a46-default-rtdb.firebaseio.com",
-  projectId: "authentication-19a46",
-  storageBucket: "authentication-19a46.appspot.com",
-  messagingSenderId: "885459143254",
-  appId: "1:885459143254:web:1f2002f0da550188ef49f7",
-  measurementId: "G-SQRCE059GP"
-}
+
+
 
 @NgModule({
   declarations: [
@@ -53,10 +38,9 @@ const Firebase={
     Home,
     IssuebookComponent,
     Loggin,
+    Records,
     ReturnBook,
     Pipes
-
-
   ],
   imports: [
     BrowserModule,
@@ -65,7 +49,6 @@ const Firebase={
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
    AngularFireModule.initializeApp({
      apiKey: "AIzaSyB0P6SIgR1EHhn5D1yZZHgzqqfPbF2WuyA",
      authDomain: "authentication-19a46.firebaseapp.com",
