@@ -29,6 +29,8 @@ constructor(private Log:LoginData,
   error:boolean=false
   SignupError:boolean=false
   localvariable:boolean=false
+  formlevel:boolean=false
+
 
 
 //SIGNUP FORM HANDLE----------------------------------------------------------------------------------//
@@ -69,7 +71,8 @@ this.Auth.Login(LoginData.Email,LoginData.Password)
  this.LoginSpinner=true
 
 },(error)=>{
-  console.log(error.value)
+  console.log(error.message)
+
     this.LoginSpinner=true
     this.error=true
 })
@@ -82,23 +85,38 @@ this.Auth.Login(LoginData.Email,LoginData.Password)
 
 }
 
-  SignUp(log:HTMLLabelElement){
- let signinData:any=this.Signin.value
-  this.Auth.Signup(signinData.Email,signinData.Password).subscribe(res=>{
-    console.log(res)
+  SignUp(log:HTMLLabelElement) {
+
+    if (this.Signin.valid && this.Signin.touched) {
+      let signinData: any = this.Signin.value
+      this.formlevel=false
+      this.Auth.Signup(signinData.Email, signinData.Password).subscribe(res => {
+        console.log(res)
 
 
-    this.Signin.reset()
-    log.click()
-    this.SignupError=false
-    alert("User Created !!!")
+        this.Signin.reset()
+        log.click()
+        this.SignupError = false
+        alert("User Created !!!")
 
-  },(error)=>{
-    console.log(error)
-    this.SignupError=true
-  })
+      }, (error) => {
+        console.log(error)
+        this.SignupError = true
+      })
+    } else if (!this.Signin.value.Username) {
+      this.formlevel=true
+      console.log('notvalid - nme')
+    } else if (!this.Signin.value.Email?.includes('@'))  {
+
+      console.log('notvalid - Email')
+    } else if (!this.Signin.value.Password) {
+      console.log('notvalid - pass')
+    }else{
+      console.log('notvalid')
+      this.formlevel=false
+    }
+
   }
-
 
 
 
@@ -121,7 +139,17 @@ PassValid(){
   return color
 }
 
-// PASSWORD L:ENGTH ---------------------------------------------------//
+// PASSWORD LENGTH ---------------------------------------------------//
+
+  SignUpPass(event:any){
+  let color
+  if(!this.Signin.get(event)?.value && this.Signin.touched){
+    color="2px solid red"
+  }else if(this.Signin.get(event)?.value && this.Signin.touched){
+    color="2px solid green"
+  }
+  return color
+  }
 
 
   ngOnInit(): void {

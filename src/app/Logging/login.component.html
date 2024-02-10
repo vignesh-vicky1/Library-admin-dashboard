@@ -30,25 +30,30 @@
   <div class="register">
     <ng-form class="form" [formGroup]="Signin">
       <label for="chk" aria-hidden="true">Register</label>
-      <span class="s1" *ngIf="SignupError">* Email Already Exist</span>
+      <span class="s1" *ngIf="SignupError">* Email already exit</span>
+      <span class="s1" *ngIf="formlevel" >*plz Fill The form</span>
       <input class="input"
              type="text"
              name="txt"
              placeholder="Username"
              required=""
-             formControlName="Username">
+             formControlName="Username"
+             [ngStyle]="{border:SignUpPass('Username')}">
       <input class="input"
              type="email"
              name="Email"
              placeholder="Email"
              required=""
-             formControlName="Email">
+             formControlName="Email"
+             [ngStyle]="{border:SignUpPass('Email')}">
       <input class="input"
              type="password"
              name="Password"
              placeholder="Password"
              required=""
-             formControlName="Password">
+             formControlName="Password"
+      [ngStyle]="{border:SignUpPass('Password')}">
+
       <button (click)="SignUp(log)">Register</button>
     </ng-form>
   </div>
