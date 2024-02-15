@@ -89,7 +89,7 @@ Signup(Email:string,Password:string){
     localStorage.removeItem('userTokken')
 
     this.Log.Data=false
-    this.route.navigate(['#'])
+    this.route.navigate(['LogIn'])
 
 
 

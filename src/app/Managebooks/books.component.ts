@@ -46,6 +46,7 @@ export class Books implements OnInit{
 
   Add(){
     let Data :Dataservice=this.AddBook.value
+
     if(!this.updatebutton){
       if(this.AddBook.valid){
         this.Loaderstatus=true
@@ -53,9 +54,9 @@ export class Books implements OnInit{
 
         this.Http.post("https://personandb-default-rtdb.firebaseio.com/Books.json",Data).subscribe(
           (value)=>{
-            this.Id= 1;
 
 
+            this.Id=1
             this.Get()
             alert('Books Added Suuccessfully !!!' )
             this.AddBook.reset()
@@ -94,33 +95,33 @@ export class Books implements OnInit{
         if (!this.updatebutton) {
 
 
-        if (Data.length < 1000) {
-          for (let i = 0; i < Data.length; i++) {
-            this.Quantity = 0;
-            for (let j = 0; j < this.Bookscount.IssuedBookDetails.length; j++) {
+          if (Data.length < 1000) {
+            for (let i = 0; i < Data.length; i++) {
               this.Quantity = 0;
-              if (Data[i].BookName == this.Bookscount.IssuedBookDetails[j].BookName) {
-                this.Quantity = this.Quantity + this.Bookscount.IssuedBookDetails[j].Quantity
+              for (let j = 0; j < this.Bookscount.IssuedBookDetails.length; j++) {
+                this.Quantity = 0;
+                if (Data[i].BookName == this.Bookscount.IssuedBookDetails[j].BookName) {
+                  this.Quantity = this.Quantity + this.Bookscount.IssuedBookDetails[j].Quantity
 
-                console.log(this.Quantity)
-                Data[i].Quantity = Data[i].Quantity - this.Quantity
+                  console.log(this.Quantity)
+                  Data[i].Quantity = Data[i].Quantity - this.Quantity
+                }
+
               }
+              console.log(this.Quantity)
+
 
             }
-            console.log(this.Quantity)
 
 
           }
-
-
-        } else {
         }
-
-      }else if(this.updatebutton){
+          else if(this.updatebutton){
           console.log("Quality executed on Editphase")
         }
 
-          // ID VALIDATE ------------------------------------------------------------------------//
+
+        // ID VALIDATE ------------------------------------------------------------------------//
         for (let i = 0; i < Data.length; i++) {
 
 
@@ -138,6 +139,8 @@ export class Books implements OnInit{
       this.Loaderstatus=false
       this.updatebutton=false
          this.BookDetails= Values1
+      this.Http.put("https://personandb-default-rtdb.firebaseio.com/Books.json",this.BookDetails)
+        .subscribe((res)=>{console.log(res)})
       this.Bookservice.BookData=Values1
       localStorage.setItem("Book",String(Values1.length))
 

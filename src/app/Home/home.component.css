@@ -59,7 +59,8 @@ i{
   border-radius: 20px;
  box-shadow: 2px 4px 5px 3px grey;
   width:80%;
-  height: 330px;
+  min-height: 330px;
   justify-content: center;
   align-items: center;
 }
+
