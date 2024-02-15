@@ -1,0 +1,56 @@
+div{
+  width: auto;
+  padding: 20px;
+  background-color: #5e5e6e;
+  border-radius: 30px;
+
+
+}
+.div1{
+  margin-top: 20px;
+}
+input{
+  width: 100%;
+  height: 2rem;
+  border-radius: 10px;
+  outline: none;
+  border: 1px grey;
+  text-align: center;
+
+}
+button{
+  width: 40%;
+  height: 30px;
+  padding: 20px;
+
+  background-color: #2f5df5;
+  border-radius: 10px;
+  border: none;
+
+
+  margin-left: 30%;
+  margin-top: 2%;
+  transition: 0.5s ease-in-out;
+}
+button:hover{
+  transform: translateY(+5px);
+}
+table{
+  justify-content: center;
+  border: 1px solid grey;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+
+
+
+}
+tr{
+  border: 1px solid grey;
+}
+td{
+  border: 1px solid grey;
+}
+p{
+  text-align: center;
+}

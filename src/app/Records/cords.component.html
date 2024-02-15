@@ -1,3 +1,38 @@
 <div>
-  <H1>Records comp</H1>
+  <p>Enter BookName</p>
+  <input type="search" #input >
+  <br>
+  <button (click)="search(input)">Search</button>
+
+   <table *ngIf="!error">
+
+     <tr *ngFor="let a of FinalData">
+       <td>ID:-{{a.Id}}</td>
+       <td>BookName:-{{a.BookName}}</td>
+       <td>AuthorName:-{{a.AuthorName}}</td>
+       <td>Quantity:-{{a.Quantity}}</td>
+     </tr>
+   </table>
+  <p *ngIf="error"> No Books</p>
 </div>
+<div class="div1">
+  <p>Enter StudentName</p>
+  <input type="search" #input >
+  <br>
+  <button >Search</button>
+
+  <table >
+
+    <tr >
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <p >* No Books</p>
+</div>
+
+
+
+
