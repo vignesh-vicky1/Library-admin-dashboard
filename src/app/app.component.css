@@ -2,22 +2,25 @@
   background-color: #6060da;
   display: flex;
 
+
   color: white;
-  flex-direction: row;
-  gap: 50rem;
+
+
   height: 40px;
  align-items: center;
+
   position: fixed;
   top: 0;
   z-index: +1;
   width: 100%;
 
-
-
-
-
 }
-
+.child{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .H1{
   flex-grow: 1;
   font-size: large;
@@ -37,6 +40,7 @@
 }
 .childDiv{
   display: flex;
+
 }
 
 i{
