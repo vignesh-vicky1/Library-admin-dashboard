@@ -38,6 +38,7 @@ Chart.register(...registerables)
 
 
         }
+
         piechart( bookscount:any,StudentCount:any,issuecounts:any) {
           const mychart = new Chart("Chart", {
             type: 'bar',
@@ -83,4 +84,6 @@ Chart.register(...registerables)
 
         }
   protected readonly localStorage = localStorage;
+
+
 }

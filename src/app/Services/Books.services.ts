@@ -12,4 +12,7 @@ export class BookData {
   StudentCount: number = 0;
   IssuedBookDetails: issuebooktype[] = [];
   book: number = 0;
+
+
+
 }

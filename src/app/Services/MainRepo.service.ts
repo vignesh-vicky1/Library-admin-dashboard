@@ -8,7 +8,7 @@ export class CentralRepo{
   }
 
   ReturnedData:ReturnData[]=[]
-
+  MobNav:boolean=false
 
 
 //GET METHOD OF RETURNBOOK COMPONENT-------------------------------------------------------------------------//
