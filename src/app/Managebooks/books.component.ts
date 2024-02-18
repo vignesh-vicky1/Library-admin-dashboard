@@ -8,6 +8,7 @@ import {filter, generate, map} from "rxjs";
 import {BookData} from "../Services/Books.services";
 import {BookAndStudent} from "../Services/BookStudentData.serivice";
 import formatters from "chart.js/dist/core/core.ticks";
+import { CentralRepo } from "../Services/MainRepo.service";
 
 
 
@@ -23,7 +24,10 @@ export class Books implements OnInit{
   BookDetails:any[]=[];
   updatebutton:boolean=false
 
-  constructor(private Http:HttpClient, private Bookscount:BookData, private Bookservice:BookAndStudent) {
+  constructor(private Http:HttpClient,
+              private Bookscount:BookData,
+              private Bookservice:BookAndStudent,
+              private Mobnav:CentralRepo) {
   }
   Id =1;
   Quantity:number=0;
@@ -84,7 +88,7 @@ export class Books implements OnInit{
   Get(){
     this.Http.get<Dataservice[]>("https://personandb-default-rtdb.firebaseio.com/Books.json")
       .pipe(map((values)=> {
-        let Data = [];
+        let Data:Dataservice[] = [];
         for (let valuesKey in values) {
 
           Data.push(values[valuesKey])
@@ -232,6 +236,8 @@ Edit(event:any){
 ngOnInit() {
 
   this.Get();
+
+this.Mobnav.MobNav=false
 
 }
 

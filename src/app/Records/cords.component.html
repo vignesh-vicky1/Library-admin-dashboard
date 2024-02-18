@@ -17,20 +17,20 @@
 </div>
 <div class="div1">
   <p>Enter StudentName</p>
-  <input type="search" #input >
+  <input type="search" #input1 >
   <br>
-  <button >Search</button>
+  <button (click)="searchStudent(input1)">Search</button>
 
   <table >
 
-    <tr >
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr *ngFor="let b of StudentDetails">
+      <td>Id:-{{b.Id}}</td>
+      <td>Name:-{{b.Name}}</td>
+      <td>Batch:-{{b.Year}}</td>
+      <td>JoinDate:-{{b.JoinDate}}</td>
     </tr>
   </table>
-  <p >* No Books</p>
+  <p *ngIf="StudentError">* No Students</p>
 </div>
 
 
