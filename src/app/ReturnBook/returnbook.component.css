@@ -5,26 +5,32 @@
   border-radius: 50%;
 }
 .Div1 {
-  width: 220px;
+  width: auto;
   background-color: #1f1e1e;
   color: white;
   margin-top: 20px;
   padding: 10px;
   border: 2px solid white;
   border-radius: 30px;
-
+ flex-grow: 1;
   justify-content: center;
   text-align: center;
+}
+@media screen and(max-width: 500px){
+  .Div1 {
+
+  }
 }
 input {
   padding: 10px;
   margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
+
   text-align: center;
   outline: 2px solid #6060da;
   border: none;
   border-radius: 10px;
+  width: 80%;
+
 }
 button {
   padding: 10px;
@@ -39,10 +45,10 @@ button {
 .Tdiv {
   display: flex;
   flex-wrap: wrap-reverse;
-  gap: 8rem;
+
 }
 .Subdiv2 {
-  flex-grow: 1;
+  flex-grow: 7;
   justify-content: center;
   text-align: center;
 }

@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { map } from "rxjs";
 import { Dataservice } from "../Services/Data.services";
+import { StudentInterface } from "../Services/Student.interface";
 
 @Component({selector:'Records-app',
 templateUrl:'cords.component.html',
@@ -11,7 +12,9 @@ export class Records{
 
   }
   FinalData:Dataservice[]=[]
+  StudentDetails:StudentInterface[]=[]
   error:boolean=false
+  StudentError:boolean=false
 
 search(event:HTMLInputElement){
     console.log(event.value)
@@ -41,6 +44,29 @@ search(event:HTMLInputElement){
 
 
 }
+
+
+//Search student function -------------------------------------------------------------------//
+
+searchStudent(event:HTMLInputElement){
+console.log(event.value)
+  this.Http.get<any>('https://personandb-default-rtdb.firebaseio.com/Students.json')
+    .pipe(map((value)=>{
+      let Data:StudentInterface[]=[]
+      for(let a in value){
+        Data.push(value[a])
+      }
+      return Data
+    })).subscribe((value1)=>{
+      console.log(value1)
+    this.StudentDetails = value1.filter((res)=>{
+        return res.Name.toLowerCase() == event.value
+    })
+     this.StudentDetails.length>=1 ? this.StudentError =false :this.StudentError=true
+
+  })
+}
+
 
 
 

@@ -69,6 +69,9 @@ export class StudentComponent implements OnInit{
       }))).subscribe((value1 => {
         this.Loaderstatus=false
       this.studentData = value1
+
+      this.Http.put('https://personandb-default-rtdb.firebaseio.com/Students.json',value1)
+        .subscribe((res)=>{console.log(res)})
       this.StudentService.StudentData=value1
       this.Student.StudentCount=this.studentData.length;
       localStorage.setItem("Student",String(value1.length))
